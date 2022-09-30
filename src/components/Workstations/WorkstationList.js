@@ -11,7 +11,7 @@ const WorkstationList = (props) => {
       <h2 className="workstations-list__fallback">Found no workstations</h2>
     );
   }
-  //reverseWorkstationHandler
+  //reverseWorkstationHandler -> onClick
   // PUT request to update the workstation status?
   // expense.schedule.monday.vacant.pop(selectedTime);
   // expense.schedule.monday.reserved.push(selectedTime);
