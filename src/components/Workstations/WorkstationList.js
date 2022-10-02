@@ -1,39 +1,33 @@
 import React from "react";
-import WorkstationItem from "./WorkstationItem";
+import Workstation from "./Workstation";
 import "./WorkstationList.css";
 
 const WorkstationList = (props) => {
-  const workstations = props.workstations;
-  const selectedTime = props.selectedTime;
-
-  if (workstations.length === 0) {
+  if (props.workstations.length === 0) {
     return (
       <h2 className="workstations-list__fallback">Found no workstations</h2>
     );
   }
-  //reverseWorkstationHandler -> onClick
-  // PUT request to update the workstation status?
+  //reverseWorkstationHandler
+  // PUT methopd http request to update the workstation status and schedule
   // expense.schedule.monday.vacant.pop(selectedTime);
   // expense.schedule.monday.reserved.push(selectedTime);
 
-  for (let workstation of workstations) {
-    if (workstation.schedule.monday.vacant.includes(selectedTime)) {
-      workstation.status = "Available";
-    } else {
-      workstation.status = "Unavailable";
-    }
-  }
-
-  console.log(selectedTime);
+  props.workstations.map(
+    (workstation) =>
+      (workstation.available = workstation.schedule.monday.vacant.includes(
+        props.selectedTime
+      ))
+  );
 
   return (
     <ul className="workstations-list">
-      {workstations.map((workstation) => (
-        <WorkstationItem
+      {props.workstations.map((workstation) => (
+        <Workstation
           key={workstation.id}
           id={workstation.id}
           name={workstation.name}
-          status={workstation.status}
+          available={workstation.available}
         />
       ))}
     </ul>

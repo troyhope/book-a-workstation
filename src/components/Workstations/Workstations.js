@@ -5,23 +5,21 @@ import WorkstationFilter from "./WorkstationFilter";
 import WorkstationList from "./WorkstationList";
 
 function Workstations(props) {
-  const [changeyear, setChangeYear] = useState("10:00");
+  const [changetime, setChangeTime] = useState("10:00");
 
   const filterChangeHandler = (selectedTime) => {
-    setChangeYear(selectedTime);
+    setChangeTime(selectedTime);
   };
-
-  // console.log(props.workstations);
 
   return (
     <div>
       <Card className="workstations">
         <WorkstationFilter
-          selected={changeyear}
+          selected={changetime}
           dateFilter={filterChangeHandler}
         />
         <WorkstationList
-          selectedTime={changeyear}
+          selectedTime={changetime}
           workstations={props.workstations}
         />
       </Card>

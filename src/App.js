@@ -10,7 +10,7 @@ function App() {
       {
         id: "W1",
         name: "Workstation One",
-        status: "Unavailable",
+        available: true,
         schedule: {
           monday: {
             vacant: ["10:30", "11:00", "11:30"],
@@ -25,7 +25,7 @@ function App() {
       {
         id: "W2",
         name: "Workstation Two",
-        status: "Available",
+        available: true,
         schedule: {
           monday: {
             vacant: ["9:00", "9:30", "10:00"],
