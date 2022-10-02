@@ -18,5 +18,3 @@
 ## Other
 
 7. Still to do
-   npm install
-   npm start
