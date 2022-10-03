@@ -9,7 +9,7 @@ const WorkstationList = (props) => {
     );
   }
   //reverseWorkstationHandler
-  // PUT methopd http request to update the workstation status and schedule
+  // PUT method http request to update the workstation status and schedule
   // expense.schedule.monday.vacant.pop(selectedTime);
   // expense.schedule.monday.reserved.push(selectedTime);
 
